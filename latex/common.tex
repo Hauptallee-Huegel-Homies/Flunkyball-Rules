@@ -1,0 +1,113 @@
+
+\usepackage{ifluatex, ifxetex}
+\newif\ifxetexorluatex
+\ifxetex
+  \xetexorluatextrue
+\else
+  \ifluatex
+    \xetexorluatextrue
+  \else
+    \xetexorluatexfalse
+  \fi
+\fi
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{polyglossia}
+  \setsansfont{TeX Gyre Heros}
+  \setmainfont{Crimson}
+  %\setmonofont{CMU Typewriter Text}
+  \defaultfontfeatures{Ligatures={TeX}}
+  \ifxetex
+    \XeTeXinputnormalization=1
+  \fi
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{tgheros}
+  \usepackage{crimson}
+  \usepackage{babel}
+\fi
+
+\usepackage{
+  multicol,
+  hyperref,
+  xcolor,
+  enumitem
+}
+
+\providecommand*{\myTopmargin}{0.75cm}
+\providecommand*{\myRightmargin}{1.375cm}
+\providecommand*{\myBottommargin}{0.75cm}
+\providecommand*{\myLeftmargin}{1.375cm}
+\providecommand*{\mySectionbeforeskip}{.075\baselineskip}
+\providecommand*{\mySectionafterskip}{.025\baselineskip}
+\providecommand*{\mySectionfontsizeOne}{10}
+\providecommand*{\mySectionfontsizeTwo}{12}
+\providecommand*{\mySubsectionbeforeskip}{.025\baselineskip}
+\providecommand*{\mySubsectionafterskip}{.0125\baselineskip}
+\providecommand*{\mySubsectionfontsizeOne}{8}
+\providecommand*{\mySubsectionfontsizeTwo}{10}
+
+\hypersetup{
+  colorlinks,
+  linkcolor={black},
+  citecolor={black},
+  urlcolor={black}
+}
+\RedeclareSectionCommand[
+  %runin=false,
+  %afterindent=false,
+  beforeskip=\mySectionbeforeskip,
+  afterskip=\mySectionafterskip,
+  font=\fontsize{\mySectionfontsizeOne}{\mySectionfontsizeTwo}\selectfont
+]{section}
+\RedeclareSectionCommand[
+  %runin=false,
+  %afterindent=false,
+  %afterskip=-100ex,
+  beforeskip=\mySubsectionbeforeskip,
+  afterskip=\mySubsectionafterskip,
+  font=\fontsize{\mySubsectionfontsizeOne}{\mySubsectionfontsizeTwo}\selectfont
+]{subsection}
+
+% pandoc uses a macro called tightlist, that is not defined per default
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}%
+}
+
+\renewcommand*{\sectionmarkformat}{}
+\renewcommand*{\sectionformat}{}
+\renewcommand*{\subsectionmarkformat}{}
+\renewcommand*{\subsectionformat}{}
+\renewcommand*{\subsubsectionmarkformat}{}
+\renewcommand*{\subsubsectionformat}{}
+
+\makeatletter
+\renewcommand{\thesubsection}{%
+  \ifnum\c@subsection<1 \@arabic\c@section
+  \else \thesection.\@arabic\c@subsection
+  \fi
+}
+\makeatother
+
+
+\setlist[enumerate]{
+  leftmargin=\parindent,
+  align=left,
+  labelsep=0em,
+  itemindent=*,
+  nosep
+}
+\setlist[enumerate, 1]{
+  label= \thesubsection\alph*),
+  ref=\thesubsection\alph*,
+  labelindent=0pt,
+  itemindent=*,
+}
+\setlist[enumerate, 2]{
+  label= \theenumi\arabic*),
+  ref=\theenumi\arabic*,
+  labelindent=0.3em,
+  itemindent=0.7em,
+}
