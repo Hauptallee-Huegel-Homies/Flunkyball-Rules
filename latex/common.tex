@@ -4,8 +4,36 @@
   xcolor,
   enumitem,
   translator,
-  microtype
+  microtype,
+  catchfile,
 }
+
+
+\languagealias{ngerman}{German}
+\languagealias{german}{German}
+\languagealias{naustrain}{German}
+
+\newtranslation[to = English]{document language}{English}
+\newtranslation[to = German]{document language}{Deutsch}
+
+\newtranslation[to = German]{Rules}{Regeln}
+
+\newtranslation[to = German]{and}{und}
+
+\newtranslation[to = German]{other members of the HHH-Flunky-Rule-committee}{andere Mitglieder des HHH-Flunky-Regel-Komitee}
+
+\newtranslation[to = German]{Draft}{Entwurf}
+\newtranslation[to = German]{Final}{}
+\newtranslation[to = English]{Final}{}
+
+\IfFileExists{latex/version.tex}{
+  \input{latex/version.tex}
+  \message{Rules Version \ruleversion{}}
+}{
+  \providecommand*{\ruleversion}{Undef}
+  \message{Rules Version not set}
+}
+
 
 \usepackage[
   pdfusetitle
@@ -16,10 +44,8 @@
   footsepline
   ]{scrlayer-scrpage}
 
-\providecommand*{\myTopmargin}{0.75cm}
-\providecommand*{\myRightmargin}{1.375cm}
-\providecommand*{\myBottommargin}{0.75cm}
-\providecommand*{\myLeftmargin}{1.375cm}
+\providecommand*{\myWidth}{290mm}
+\providecommand*{\myHeight}{200mm}
 \providecommand*{\mySectionbeforeskip}{.075\baselineskip}
 \providecommand*{\mySectionafterskip}{.025\baselineskip}
 \providecommand*{\mySectionfontsizeOne}{10}
@@ -28,6 +54,8 @@
 \providecommand*{\mySubsectionafterskip}{.0125\baselineskip}
 \providecommand*{\mySubsectionfontsizeOne}{8}
 \providecommand*{\mySubsectionfontsizeTwo}{10}
+
+\areaset[0cm]{\myWidth}{\myHeight}
 
 \hypersetup{
   colorlinks,
@@ -81,31 +109,19 @@
 }
 
 \setlist[enumerate, 1]{
-  label={ \thesubsection{}\alph*{})}, % chktex 9
+  label={ \thesubsection{}\alph*{}.},
   ref={\thesubsection{}\alph*{}},
   labelindent=0pt,
   itemindent=*
-} % chktex 10
+} 
 
 \setlist[enumerate, 2]{
-  label={ \theenumi{}\arabic*{})}, % chktex 9
+  label={ \theenumi{}\arabic*{}.}, 
   ref={\theenumi{}\arabic*{}},
   labelindent=0.3em,
   itemindent=0.7em
-} % chktex 10
+} 
 
-\languagealias{ngerman}{German}
-\languagealias{german}{German}
-\languagealias{naustrain}{German}
-
-\newtranslation[to = English]{document language}{English}
-\newtranslation[to = German]{document language}{Deutsch}
-
-\newtranslation[to = German]{Rules}{Regeln}
-
-\newtranslation[to = German]{and}{und}
-
-\newtranslation[to = German]{other members of the HHH-Flunky-Rule-committee}{andere Mitglieder des HHH-Flunky-Regel-Komitee}
 
 \title{\emph{Hauptallee Hügel Homies} Flunkyball Rules}
 \author{Lukas Grassauer%
@@ -119,14 +135,16 @@
   L. Vavra%
   \and \translate{other members of the HHH-Flunky-Rule-committee}%
 }
-\subtitle{Version 1.2, \translate{document language}}
+\subtitle{Version \ruleversion{}, \translate{document language}}
 
 
 \clearpairofpagestyles{}
 \ihead{HHH-Flunkyball~\translate{Rules}}
-\ohead{\today{} --- \translate{document language}}
+\ohead{\today{} --- \ruleversion{} \translate{document language}}
 \ifoot{L.~G.~\translate{and}~HHHFRC}
 \ofoot{\href{\detokenize{http://www.hauptalleehügelhomies.com/}}{hauptalleehügelhomies.com}}
+
+%\setlength\parindent{0pt}
 
 \listfiles
 % chktex 17
