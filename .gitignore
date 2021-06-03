@@ -297,3 +297,8 @@ TSWLatexianTemp*
 
 build
 build/
+
+version.txt
+version.*
+
+.vscode/
