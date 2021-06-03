@@ -122,8 +122,8 @@ roles without a throw attempt. The following actions result in a minor penalty:
 ## Major
 
 The offending party must take an additional drink. The drink can be delegated to
-exactly one member of the team still remaining. The following actions result in
-a major penalty:
+exactly one member of the team, remaining or already finished. The following
+actions result in a major penalty:
 
 1. The container empties for any other reason than being drunk by the player.
 2. The container is drank from, while the team is not the _Offence_, it is not
