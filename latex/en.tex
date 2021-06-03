@@ -5,7 +5,28 @@
   %draft,
   final,
   british,
+  %naustrian,
 ]{scrartcl}
+
+\input{latex/precommon}
+
+\newcommand*{\myTopmargin}{0.95cm}
+%\newcommand*{\myRightmargin}{1.375cm}
+\newcommand*{\myBottommargin}{0.95cm}
+%\newcommand*{\myLeftmargin}{1.375cm}
+\newcommand*{\mySectionbeforeskip}{.1\baselineskip}
+\newcommand*{\mySectionafterskip}{.05\baselineskip}
+\newcommand*{\mySectionfontsizeOne}{12}
+\newcommand*{\mySectionfontsizeTwo}{14}
+\newcommand*{\mySubsectionbeforeskip}{.05\baselineskip}
+\newcommand*{\mySubsectionafterskip}{.025\baselineskip}
+\newcommand*{\mySubsectionfontsizeOne}{10}
+\newcommand*{\mySubsectionfontsizeTwo}{12}
+
+
+\ifxetexorluatex
+  \setmainlanguage[variant=british]{english}
+\fi
 
 \input{latex/common}
 
@@ -14,3 +35,5 @@
     \input{build/latex/en}
   \end{multicols}
 \end{document}
+
+% chktex 17

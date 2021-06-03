@@ -1,0 +1,45 @@
+% chktex-file 1
+
+\usepackage[l2tabu,orthodox]{nag}
+
+\usepackage{iftex}
+\newif\ifxetexorluatex
+\ifxetex
+  \xetexorluatextrue
+  \message{Precommon: Detected XeLaTeX}
+\else
+  \ifluatex
+    \xetexorluatextrue
+    \message{Precommon: Detected LuaLaTeX}
+  \else
+    \xetexorluatexfalse
+    \message{Precommon: Detected pdfLaTeX}
+  \fi
+\fi
+
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{polyglossia}
+  \setsansfont{TeX Gyre Heros}
+  \ifluatex
+    \setmainfont[Ligatures=TeX]{Crimson}
+  \else
+    \setmainfont[
+        Ligatures = TeX,
+        Path ={/usr/share/texlive/texmf-dist/fonts/opentype/kosch/crimson/},
+        UprightFont = *-Roman,
+        ItalicFont = *-Italic,
+        BoldFont = *-Bold
+        ]{Crimson}
+  \fi
+  %\setmonofont{CMU Typewriter Text}
+  \ifxetex
+    \XeTeXinputnormalization=1
+  \fi
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{tgheros}
+  \usepackage{crimson}
+  \usepackage{babel}
+\fi

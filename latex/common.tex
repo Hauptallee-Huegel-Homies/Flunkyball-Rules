@@ -1,40 +1,20 @@
 
-\usepackage{ifluatex, ifxetex}
-\newif\ifxetexorluatex
-\ifxetex
-  \xetexorluatextrue
-\else
-  \ifluatex
-    \xetexorluatextrue
-  \else
-    \xetexorluatexfalse
-  \fi
-\fi
-
-\ifxetexorluatex
-  \usepackage{fontspec}
-  \usepackage{polyglossia}
-  \setsansfont{TeX Gyre Heros}
-  \setmainfont{Crimson}
-  %\setmonofont{CMU Typewriter Text}
-  \defaultfontfeatures{Ligatures={TeX}}
-  \ifxetex
-    \XeTeXinputnormalization=1
-  \fi
-\else
-  \usepackage[utf8]{inputenc}
-  \usepackage[T1]{fontenc}
-  \usepackage{tgheros}
-  \usepackage{crimson}
-  \usepackage{babel}
-\fi
-
 \usepackage{
   multicol,
-  hyperref,
   xcolor,
-  enumitem
+  enumitem,
+  translator,
+  microtype
 }
+
+\usepackage[
+  pdfusetitle
+  ]{hyperref}
+
+\usepackage[
+  headsepline,
+  footsepline
+  ]{scrlayer-scrpage}
 
 \providecommand*{\myTopmargin}{0.75cm}
 \providecommand*{\myRightmargin}{1.375cm}
@@ -85,29 +65,68 @@
 
 \makeatletter
 \renewcommand{\thesubsection}{%
-  \ifnum\c@subsection<1 \@arabic\c@section
-  \else \thesection.\@arabic\c@subsection
-  \fi
+  \ifnum\c@subsection<1 \@arabic\c@section%
+  \else \thesection.\@arabic\c@subsection%
+  \fi%
 }
 \makeatother
 
 
-\setlist[enumerate]{
-  leftmargin=\parindent,
-  align=left,
-  labelsep=0em,
-  itemindent=*,
-  nosep
+\setlist[enumerate]{%
+  leftmargin=\parindent,%
+  align=left,%
+  labelsep=0em,%
+  itemindent=*,%
+  nosep%
 }
+
 \setlist[enumerate, 1]{
-  label= \thesubsection\alph*),
-  ref=\thesubsection\alph*,
+  label={ \thesubsection{}\alph*{})}, % chktex 9
+  ref={\thesubsection{}\alph*{}},
   labelindent=0pt,
-  itemindent=*,
-}
+  itemindent=*
+} % chktex 10
+
 \setlist[enumerate, 2]{
-  label= \theenumi\arabic*),
-  ref=\theenumi\arabic*,
+  label={ \theenumi{}\arabic*{})}, % chktex 9
+  ref={\theenumi{}\arabic*{}},
   labelindent=0.3em,
-  itemindent=0.7em,
+  itemindent=0.7em
+} % chktex 10
+
+\languagealias{ngerman}{German}
+\languagealias{german}{German}
+\languagealias{naustrain}{German}
+
+\newtranslation[to = English]{document language}{English}
+\newtranslation[to = German]{document language}{Deutsch}
+
+\newtranslation[to = German]{Rules}{Regeln}
+
+\newtranslation[to = German]{and}{und}
+
+\newtranslation[to = German]{other members of the HHH-Flunky-Rule-committee}{andere Mitglieder des HHH-Flunky-Regel-Komitee}
+
+\title{\emph{Hauptallee Hügel Homies} Flunkyball Rules}
+\author{Lukas Grassauer%
+  \and%
+  H. M. Grünsteidl%
+  \and%
+  M. Hauser%
+  \and
+  Ha. Ca. Kuk.%
+  \and
+  L. Vavra%
+  \and \translate{other members of the HHH-Flunky-Rule-committee}%
 }
+\subtitle{Version 1.2, \translate{document language}}
+
+
+\clearpairofpagestyles{}
+\ihead{HHH-Flunkyball~\translate{Rules}}
+\ohead{\today{} --- \translate{document language}}
+\ifoot{L.~G.~\translate{and}~HHHFRC}
+\ofoot{\href{\detokenize{http://www.hauptalleehügelhomies.com/}}{hauptalleehügelhomies.com}}
+
+\listfiles
+% chktex 17
