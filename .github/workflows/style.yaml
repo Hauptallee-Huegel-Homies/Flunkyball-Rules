@@ -44,8 +44,9 @@ jobs:
             --to latex
             --output build/latex/en.tex 
             rules/en.md
-      - name: Adapt Latex (build/latex/en.tex)
+      - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
         run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex
+      - name: "Adapt Latex (build/latex/en.tex): Add {} to terminate \\tightlist"
         run: sed -i 's/\\tightlist/\\tightlist{}/' build/latex/en.tex
       - name: Check Latex files
         uses: j2kun/chktex-action@1.0.3
