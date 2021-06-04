@@ -1,5 +1,9 @@
 # Flunkyball Rules
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Hauptallee-Huegel-Homies/Flunkyball-Rules/style?label=Style&logo=github&style=for-the-badge)
+
+---
+
 This is the central repository managing the standard Flunkyball Ruleset and its
 translations of [Hauptallee Hügel Homies](http://hauptalleehuegelhomies.com).
 
@@ -13,5 +17,6 @@ Please make sure to update tests as appropriate.
 ## License
 
 The rules itself is under
-[CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode). The build
-scripts are under [MIT](https://choosealicense.com/licenses/mit/)
+[CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
+
+The build scripts are under [MIT](https://choosealicense.com/licenses/mit/).
