@@ -1,0 +1,24 @@
+{
+  "name": "Flunkyball-Rules",
+  "version": "1.2.1",
+  "description": "This is the central repository managing the standard Flunkyball Ruleset and its translations of [Hauptallee Hügel Homies](http://hauptalleehuegelhomies.com).",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo '✅'",
+    "test": "markdownlint --config .markdownlint.yaml README.md rules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules/issues"
+  },
+  "homepage": "https://github.com/Hauptallee-Huegel-Homies/Flunkyball-Rules#readme",
+  "dependencies": {
+    "markdownlint-cli": "^0.27.1"
+  }
+}

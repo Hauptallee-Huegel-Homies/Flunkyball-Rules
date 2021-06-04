@@ -21,7 +21,7 @@ endif
 
 latex/version.tex: version.txt
 	@printf "\\providecommand*{\\\ruleversion}{" > $@
-	grep -E "^([0-9]+)\.([0-9]+)-(Draft|Final)\+[0-9]+-[a-z0-9]+$$" $< | sed -E 's#^([0-9]+)\.([0-9]+)-(Draft|Final)\+([a-z0-9]+)(-?[a-z0-9]*)$$#\1.\2\5}#' >> $@
+	grep -E "^([0-9]+)\.([0-9]+)-(Draft|Final)\+[0-9]+-[a-z0-9]+$$" $< | sed -E 's#^([0-9]+)\.([0-9]+)-(Draft|Final)\+([a-z0-9]+)(-?[a-z0-9]*)$$#\1.\2\5\\version\3}#' >> $@
 
 build/latex/%.tex: rules/%.md | build/latex/
 	pandoc --from markdown --to latex --output $@ -- $<
@@ -33,11 +33,11 @@ build/latex/%.pdf: latex/%.tex latex/precommon.tex latex/common.tex build/latex/
 
 check: check-markdown check-latex
 
-check-latex: $(wildcard latex/*.tex) build/latex/en.tex
-	chktex $^
+check-latex: $(wildcard latex/*.tex) $(wildcard build/latex/*.tex)
+	chktex --localrc .chktexrc -- $^
 
 check-markdown: $(wildcard *.md) $(wildcard rules/*.md)
-	markdownlint $^
+	markdownlint --config .markdownlint.yaml -- $^
 
 clean:
 	$(RM) -r build/

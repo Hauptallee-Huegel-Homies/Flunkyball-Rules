@@ -20,11 +20,10 @@
 
 \newtranslation[to = German]{and}{und}
 
-\newtranslation[to = German]{other members of the HHH-Flunky-Rule-committee}{andere Mitglieder des HHH-Flunky-Regel-Komitee}
+\providecommand*{\others}{other members of the HHH-Flunky-Rule-committee}
 
-\newtranslation[to = German]{Draft}{Entwurf}
-\newtranslation[to = German]{Final}{}
-\newtranslation[to = English]{Final}{}
+\providecommand*{\versionDraft}{ Draft}
+\providecommand*{\versionFinal}{}
 
 \IfFileExists{latex/version.tex}{
   \input{latex/version.tex}
@@ -133,7 +132,7 @@
   Ha. Ca. Kuk.%
   \and
   L. Vavra%
-  \and \translate{other members of the HHH-Flunky-Rule-committee}%
+  \and \others{}%
 }
 \subtitle{Version \ruleversion{}, \translate{document language}}
 

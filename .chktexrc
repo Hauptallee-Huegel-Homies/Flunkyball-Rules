@@ -1,0 +1,16 @@
+# Ignore the contents of commands whose arguments do not produce
+# visible output or whose output is not subject to style
+WipeArg
+{
+    \label:{} \ref:{} \vref:{} \pageref:{} \index:{} \cite:[]{}
+    \input:{} \verbatiminput:[]{} \listinginput:[]{}{}
+    \verbatimtabinput:[]{} \include:{} \includeonly:{}
+    \bibitem:[]{} \texttt:{} \verb:{} \includegraphics:[]{}
+}
+
+# Use this to ignore linter errors of a specific error code.
+# For example, code 24 warns when an index may be misplaced due
+# to spaces (page spillover).
+CmdLine { 
+    --nowarn=24 --nowarn=36 --verbosity=2 --inputfiles=0
+}
