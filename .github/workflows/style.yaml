@@ -1,11 +1,11 @@
 name: style
 
 on:
-  - push:
+  push:
     paths:
       - "**.md"
       - "**.tex"
-  - pull_request:
+  pull_request:
     paths:
       - "**.md"
       - "**.tex"
