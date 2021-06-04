@@ -33,7 +33,7 @@ build/latex/%.pdf: latex/%.tex latex/precommon.tex latex/common.tex build/latex/
 
 check: check-markdown check-latex
 
-check-latex: $(wildcard latex/*.tex) $(wildcard build/latex/*.tex)
+check-latex: $(filter-out latex/version.tex,$(wildcard latex/*.tex)) $(wildcard build/latex/*.tex)
 	chktex --localrc .chktexrc -- $^
 
 check-markdown: $(wildcard *.md) $(wildcard rules/*.md)
