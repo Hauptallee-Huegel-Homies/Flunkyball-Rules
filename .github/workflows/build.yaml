@@ -35,8 +35,8 @@ jobs:
           root_file: latex/en.tex
           latexmk_use_lualatex: true
           args: >-
-          -cd-
-          -output-directory=build/latex/
+            -cd-
+            -output-directory=build/latex/
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
