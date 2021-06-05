@@ -12,8 +12,8 @@ on:
 
 jobs:
   markdown:
-    runs-on: ubuntu-latest
-
+    name: "⬇️ Markdown Style Check"
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout project
         uses: actions/checkout@v2
@@ -36,7 +36,8 @@ jobs:
       - name: Check Markdown files
         run: npm test
   latex:
-    runs-on: ubuntu-latest
+    name: "📖 Latex Style Check"
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout project
         uses: actions/checkout@v2
