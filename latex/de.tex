@@ -1,0 +1,46 @@
+\documentclass[
+  paper=a4,
+  landscape,
+  10pt,
+  %draft,
+  final,
+  %british,
+  naustrian,
+  headinclude=true,
+  footinclude=true,
+  headlines=1.05,
+  footlines=1.05,
+  DIV=calc,
+]{scrartcl}
+
+\input{latex/precommon}
+
+\newcommand*{\myWidth}{275mm}
+\newcommand*{\myHeight}{198mm}
+\newcommand*{\mySectionbeforeskip}{.095\baselineskip}
+\newcommand*{\mySectionafterskip}{.07\baselineskip}
+\newcommand*{\mySectionfontsizeOne}{12}
+\newcommand*{\mySectionfontsizeTwo}{14}
+\newcommand*{\mySubsectionbeforeskip}{.05\baselineskip}
+\newcommand*{\mySubsectionafterskip}{.025\baselineskip}
+\newcommand*{\mySubsectionfontsizeOne}{10}
+\newcommand*{\mySubsectionfontsizeTwo}{12}
+
+
+\ifxetexorluatex % chktex 1
+  \setmainlanguage[variant=austrian]{german}
+\fi
+
+\newcommand*{\versionDraft}{ Entwurf}
+\newcommand*{\versionFinal}{}
+\newcommand*{\others}{andere Mitglieder des HHH-Flunky-Regel-Komitees}
+
+\input{latex/common}
+
+\begin{document}
+  \begin{multicols*}{3}
+    \input{build/latex/de}
+  \end{multicols*}
+\end{document}
+
+% chktex 17

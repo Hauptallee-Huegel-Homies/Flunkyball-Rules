@@ -3,6 +3,8 @@ all: version.txt en
 
 en: build/latex/en.pdf
 
+de: build/latex/de.pdf
+
 build/:
 	mkdir -p $@
 
@@ -43,4 +45,4 @@ clean:
 	$(RM) -r build/
 	$(RM) version.txt latex/version.tex
 
-.PHONY = en all clean check check-latex check-markdown
+.PHONY = en de all clean check check-latex check-markdown
