@@ -41,7 +41,7 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: "Upload PDFs"
-        uses: actions/upload-artifcat@v2
+        uses: actions/upload-artifact@v2
         with:
           name: English PDF - ${{ steps.date.outputs.date }}
           path: build/latex/en.pdf
