@@ -25,8 +25,8 @@
 ## Target
 
 1. Any object that can be tipped over, however, does not tip over by itself, may
-   be the target, agreed upon by the teams.
-2. No agreement results in a _decider_, the winner choosing the target.
+   be the _target_, agreed upon by the teams.
+2. No agreement results in a _decider_, the winner choosing the _target_.
 
 ## Throwing Object
 
@@ -38,8 +38,7 @@
 
 # Pitch
 
-1. The _pitch_ consists of
-
+1. The _pitch_ consists of:
    1. The _centre_
    2. The _circle_, around the _centre_ with the length of the shortest shoe of
       all players as diameter.

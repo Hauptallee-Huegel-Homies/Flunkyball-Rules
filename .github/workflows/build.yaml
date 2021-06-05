@@ -28,7 +28,7 @@ jobs:
       - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
         run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex
       - name: "Adapt Latex (build/latex/en.tex): Add {} to terminate \\tightlist"
-        run: sed -i 's/\\tightlist/\\tightlist{}/' build/latex/en.te
+        run: sed -i 's/\\tightlist/\\tightlist{}/' build/latex/en.tex
       - name: "Compile Latex (latex/en.tex --> build/latex/en.pdf)"
         uses: xu-cheng/latex-action@v2
         with:
