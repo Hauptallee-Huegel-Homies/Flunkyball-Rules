@@ -31,7 +31,7 @@ build/latex/%.tex: rules/%.md | build/latex/
 	sed -i 's/\\tightlist/\\tightlist{}/' $@
 
 build/latex/%.pdf: latex/%.tex latex/precommon.tex latex/common.tex build/latex/%.tex latex/version.tex | build/latex/
-	latexmk -cd- -pdflualatex -output-directory=$(dir $@) $<
+	latexmk -cd- -pdflualatex -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=$(dir $@) $<
 
 check: check-markdown check-latex
 
