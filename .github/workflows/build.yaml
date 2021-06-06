@@ -5,13 +5,13 @@ on:
     branches:
       - main
     paths:
-      - "**.md"
+      - "rules/*.md"
       - "**.tex"
   pull_request:
     branches:
       - '*'
     paths:
-      - "**.md"
+      - "rules/*.md"
       - "**.tex"
 
 jobs:
@@ -109,6 +109,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: latex/en.tex
+          pre_compile: tlmgr install tex-gyre-heros
           latexmk_use_xelatex: true
           args: >-
             -cd-
