@@ -1,5 +1,5 @@
 
-all: version.txt en
+all: version.txt en de
 
 en: build/latex/en.pdf
 
@@ -9,6 +9,9 @@ build/:
 	mkdir -p $@
 
 build/latex/:
+	mkdir -p $@
+
+build/info/:
 	mkdir -p $@
 
 version.txt:
@@ -33,7 +36,7 @@ build/latex/%.tex: rules/%.md | build/latex/
 build/latex/%.pdf: latex/%.tex latex/precommon.tex latex/common.tex build/latex/%.tex latex/version.tex | build/latex/
 	latexmk -cd- -pdflualatex -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=$(dir $@) $<
 
-check: check-markdown check-latex
+check: check-markdown check-latex check-pdf
 
 check-latex: $(filter-out latex/version.tex,$(wildcard latex/*.tex)) $(wildcard build/latex/*.tex)
 	chktex --localrc .chktexrc -- $^
@@ -41,8 +44,13 @@ check-latex: $(filter-out latex/version.tex,$(wildcard latex/*.tex)) $(wildcard 
 check-markdown: $(wildcard *.md) $(wildcard rules/*.md)
 	markdownlint --config .markdownlint.yaml -- $^
 
+check-pdf: check-en-pdf check-de-pdf
+
+check-%-pdf: build/latex/%.pdf
+	pdfinfo $< | grep -E "^Pages:[ \t]*1$$"
+
 clean:
 	$(RM) -r build/
 	$(RM) version.txt latex/version.tex
 
-.PHONY = en de all clean check check-latex check-markdown
+.PHONY = en de all clean check check-latex check-markdown check-pdf check-en-pdf check-de-pdf

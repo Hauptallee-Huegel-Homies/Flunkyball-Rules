@@ -3,7 +3,7 @@
 1. A _match_ is one whole game of Flunkyball.
 2. A _lap_ is a throw from every player still remaining in the game.
 3. A _decider_ is a minigame that results in a winner and a loser.
-4. A _pitch_ is the area where the _match_ is played.
+4. A _pitch_ is the area and markings where the _match_ is played.
 
 # Team
 
@@ -32,14 +32,15 @@
 
 1. Any object can be the _throwing object_, however it must be agreed upon in
    advance.
-2. Should the object be damaged beyond repair and no longer able to tip over the
-   target reliably it can be exchanged for a newly agreed upon object.
+2. Should it no longer be possible to reliably tip over the _target_ with the
+   _throwing object_, and it is beyond repair, it can be exchanged for a newly
+   agreed upon object.
 3. No agreement results in a _decider_, the winner choosing the _throwing object_.
 
 # Pitch
 
 1. The _pitch_ consists of:
-   1. The _centre_
+   1. The _centre_.
    2. The _circle_, around the _centre_ with the length of the shortest shoe of
       all players as diameter.
    3. The _beerlines_, which are equidistant from the centre, while parallel to
@@ -48,12 +49,13 @@
 3. No agreement results in a _decider_, the winner choosing the _centre_ and
    _circle_ and the loser choosing the _beerlines_.
 
-# Play
+# Start
 
 1. A team is either _Offence_ or _Defence_; If a team is _Offence_ the other is
    necessarily the _Defence_ and vice versa.
-2. A _decider_ is played, the winner determines if they want to start or choose
-   side, the loser may choose side if the winner chose to start.
+2. A _decider_ is played, the winner determines if they want to start as
+   _Offence_ or choose side and start as _Defence_, the loser may choose side if
+   the winner chose to start as _Offence_.
 
 # Objective
 
@@ -72,9 +74,9 @@ The game is played in turns --- consisting of two phases --- until the _match_ e
 1. All players have to remain behind their _beerlines_.
 2. The containers may be repositioned, only by oneself, along the respective
    _beerline_, otherwise the containers must rest on the _beerline_.
-3. One of the _Offence_'s player who did not throw in this _lap_, throws the
-   _throwing object_, such that at the time of release the _throwing object_ is
-   above the elbow(s) of the players throwing arm(s).
+3. One of the _Offence_'s players remaining in the game, who did not throw in
+   this _lap_, throws the _throwing object_, such that at the time of release
+   the _throwing object_ is above the elbow(s) of the players throwing arm(s).
 4. Upon releasing the _throwing object_, the _Reaction Phase_ starts.
 
 ## Reaction Phase
@@ -84,20 +86,21 @@ The game is played in turns --- consisting of two phases --- until the _match_ e
    _throwing object_ to tip over the _target_.
 3. Once the _target_ is repositioned within the _circle_, and all players of the
    _Defence_ return behind their _beerline_ they may signal the _Offence_ to
-   stop.
+   stop. The _Offence_ must stop no later than then.
 4. After all players are behind their _beerlines_ and the _throwing object_ is
    under the control of the _Defence_, the _Reaction Phase_ ends and the teams
    swap roles.
 
 ## Tiebreaker
 
-1. If both teams do not hit the target for two _laps_, both teams are allowed to
-   move their _beerline_ two times the length of the shortest shoe of all
-   players remaining in the game, towards the _centre_.
+1. If both teams do not hit the _target_ for two _laps_, the _beerlines_ may be
+   moved towards the _centre_, twice the length of the shortest shoe of the
+   players in the team.
 
 # Penalties
 
-1. It is the obligation of the other team to demand penalties on rule violations.
+1. It is the obligation of the other team to demand penalties on rule violations
+   within one throw.
 2. Penalties can only occur self-inflicted or due to legal actions of the other
    team.
 3. At the offending player's discretion they are allowed to choose a higher
@@ -109,14 +112,15 @@ The game is played in turns --- consisting of two phases --- until the _match_ e
 In the next _Action Phase_ with the offending party as _Offence_, the teams swap
 roles without a throw attempt. The following actions result in a minor penalty:
 
-1. Leaving the pitch, without unanimous vote of all remaining players.
+1. Leaving the _pitch_, without unanimous vote of all remaining players.
 2. Stepping in front of the _beerline_ as _Offence_, or during the _Action
    Phase_ as _Defence_.
 3. Lifting the container too early during the _Reaction Phase_ as _Offence_.
 4. Touching the container during the _Reaction Phase_ as _Defence_.
 5. Touching someone else's drink.
 6. The container tipping over without spilling drinks. The container has to be
-   repositioned immediatly.
+   repositioned upright immediatly, without further penalties for touching the
+   container.
 
 ## Major
 
@@ -125,11 +129,12 @@ exactly one member of the team, remaining or already finished. The following
 actions result in a major penalty:
 
 1. The container empties for any other reason than being drunk by the player.
-2. The container is drank from, while the team is not the _Offence_, it is not
-   the _Reaction Phase_, if the _target_ is still standing or was not tipped
-   over with a legal throw.
-3. Spitting out drinks.
-4. Puking.
+2. The container is drank from, while the own team is not the _Offence_ or it is
+   not the _Reaction Phase_.
+3. The container is drank from, while the _target_ is still standing or if it
+   was not tipped over with a legal throw.
+4. Spitting out drinks.
+5. Puking.
 
 ## Severe
 

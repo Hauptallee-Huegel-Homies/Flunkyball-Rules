@@ -1,30 +1,30 @@
 \documentclass[
   paper=a4,
   landscape,
-  10pt,
+  fontsize=9.4pt,
   %draft,
   final,
   %british,
   naustrian,
   headinclude=true,
   footinclude=true,
-  headlines=1.05,
-  footlines=1.05,
+  headlines=1.2,
+  footlines=1.2,
   DIV=calc,
 ]{scrartcl}
 
 \input{latex/precommon}
 
-\newcommand*{\myWidth}{275mm}
-\newcommand*{\myHeight}{198mm}
-\newcommand*{\mySectionbeforeskip}{.095\baselineskip}
-\newcommand*{\mySectionafterskip}{.07\baselineskip}
-\newcommand*{\mySectionfontsizeOne}{12}
-\newcommand*{\mySectionfontsizeTwo}{14}
-\newcommand*{\mySubsectionbeforeskip}{.05\baselineskip}
-\newcommand*{\mySubsectionafterskip}{.025\baselineskip}
-\newcommand*{\mySubsectionfontsizeOne}{10}
-\newcommand*{\mySubsectionfontsizeTwo}{12}
+\newcommand*{\myWidth}{280mm}
+\newcommand*{\myHeight}{202mm}
+\newcommand*{\mySectionbeforeskip}{.045\baselineskip}
+\newcommand*{\mySectionafterskip}{.02\baselineskip}
+\newcommand*{\mySectionfontsizeOne}{10}
+\newcommand*{\mySectionfontsizeTwo}{11}
+\newcommand*{\mySubsectionbeforeskip}{.03\baselineskip}
+\newcommand*{\mySubsectionafterskip}{.012\baselineskip}
+\newcommand*{\mySubsectionfontsizeOne}{9}
+\newcommand*{\mySubsectionfontsizeTwo}{10}
 
 
 \ifxetexorluatex % chktex 1
@@ -38,9 +38,9 @@
 \input{latex/common}
 
 \begin{document}
-  \begin{multicols*}{3}
+  \begin{multicols}{3}
     \input{build/latex/de}
-  \end{multicols*}
+  \end{multicols}
 \end{document}
 
 % chktex 17
