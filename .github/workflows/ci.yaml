@@ -1,0 +1,191 @@
+name: CI
+
+on:
+  push:
+    paths:
+      - "**.md"
+      - "**.tex"
+  pull_request:
+    paths:
+      - "**.md"
+      - "**.tex"
+
+jobs:
+  check_markdown:
+    name: "⬇️ Markdown Style Check"
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run-script build
+      - name: Check Markdown files
+        run: npm test
+  markdown_to_latex:
+    name: "⬇️ Markdown to LaTeX 📖"
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Create build/latex/
+        run: mkdir -p build/latex/
+      - name: Build Markdown (rules/en.md) to Latex (build/latex/en.tex)
+        uses: docker://pandoc/latex:2.14.0.1
+        with:
+          args: >-
+            --from markdown
+            --to latex
+            --output build/latex/en.tex
+            rules/en.md
+      - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
+        run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex
+      - name: "Adapt Latex (build/latex/en.tex): Add {} to terminate \\tightlist"
+        run: sed -i 's/\\tightlist/\\tightlist{}/' build/latex/en.tex
+      - name: "Upload TeX files"
+        uses: actions/upload-artifact@v2
+        with:
+          name: tex-files
+          path: build/latex/[ed][ne].tex
+  check_latex:
+    name: "📖 Latex Style Check"
+    runs-on: ubuntu-20.04
+    needs:
+      - markdown_to_latex
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Create build/latex/
+        run: mkdir -p build/latex/
+      - name: Download TeX files
+        uses: actions/download-artifact@v2
+        with:
+          name: tex-files
+          path: build/latex/
+      - name: Check Latex files
+        uses: j2kun/chktex-action@1.0.3
+  lualatex:
+    name: "📄 PDF LuaLaTeX"
+    runs-on: ubuntu-20.04
+    needs:
+      - markdown_to_latex
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Create build/latex/
+        run: mkdir -p build/latex/
+      - name: Download TeX files
+        uses: actions/download-artifact@v2
+        with:
+          name: tex-files
+          path: build/latex/
+      - name: "Compile Latex (latex/en.tex --> build/latex/en.pdf)"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: latex/en.tex
+          latexmk_use_lualatex: true
+          args: >-
+            -cd-
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+            -output-directory=build/latex/
+      - name: "Upload PDFs"
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDFs
+          path: build/latex/[ed][ne].pdf
+  pdflatex:
+    name: "📄 PDF pdfLaTeX"
+    runs-on: ubuntu-20.04
+    needs:
+      - markdown_to_latex
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Create build/latex/
+        run: mkdir -p build/latex/
+      - name: Download TeX files
+        uses: actions/download-artifact@v2
+        with:
+          name: tex-files
+          path: build/latex/
+      - name: "Compile Latex (latex/en.tex --> build/latex/en.pdf)"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: latex/en.tex
+          args: >-
+            -cd-
+            -pdf
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+            -output-directory=build/latex/
+  xelatex:
+    name: "📄 PDF XeLaTeX"
+    runs-on: ubuntu-20.04
+    needs:
+      - markdown_to_latex
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Create build/latex/
+        run: mkdir -p build/latex/
+      - name: Download TeX files
+        uses: actions/download-artifact@v2
+        with:
+          name: tex-files
+          path: build/latex/
+      - name: "Compile Latex (latex/en.tex --> build/latex/en.pdf)"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: latex/en.tex
+          pre_compile: tlmgr install tex-gyre-heros
+          latexmk_use_xelatex: true
+          args: >-
+            -cd-
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+            -output-directory=build/latex/
+  check_pdf:
+    name: "📃 PDF Style Check"
+    runs-on: ubuntu-20.04
+    needs:
+      - lualatex
+    steps:
+      - name: Create build/latex/
+        run: mkdir -p build/latex/
+      - name: Download PDFs
+        uses: actions/download-artifact@v2
+        with:
+          name: PDFs
+          path: build/latex/
+      - name: "Check Page lengths"
+        shell: bash
+        run: |
+          noerror=0
+          for pdf in build/latex/*.pdf
+          do 
+            if (pdfinfo "$pdf" | grep -E "^Pages:[ \t]*1$")
+            then
+              echo "$pdf ✅"
+            else
+              echo "$pdf ❌"
+              noerror=1
+            fi
+          done
+          test "$noerror" -eq 0
