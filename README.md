@@ -1,7 +1,6 @@
 # Flunkyball Rules
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Hauptallee-Huegel-Homies/Flunkyball-Rules/style?label=Style&logo=github&style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Hauptallee-Huegel-Homies/Flunkyball-Rules/build?logo=github&style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Hauptallee-Huegel-Homies/Flunkyball-Rules/CI?label=Style&logo=github&style=for-the-badge)
 
 ---
 
