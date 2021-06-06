@@ -109,7 +109,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: latex/en.tex
-          pre_compile: tlmgr install tex-gyre-heros
+          pre_compile: tlmgr install tex-gyre
           latexmk_use_xelatex: true
           args: >-
             -cd-

@@ -20,17 +20,27 @@
 \ifxetexorluatex
   \usepackage{fontspec}
   \usepackage{polyglossia}
-  \setsansfont{TeX Gyre Heros}
   \ifluatex
+    \setsansfont{TeX Gyre Heros}
     \setmainfont[Ligatures=TeX]{Crimson}
   \else
+    \setsansfont[
+      UprightFont = *-regular,
+      BoldFont = *-bold,
+      ItalicFont = *-italic,
+      BoldItalicFont = *-bolditalic,
+      Extension = .otf,
+      Scale = 1.0
+    ]{texgyreheros}
     \setmainfont[
-        Ligatures = TeX,
-        Path ={/usr/share/texlive/texmf-dist/fonts/opentype/kosch/crimson/},
-        UprightFont = *-Roman,
-        ItalicFont = *-Italic,
-        BoldFont = *-Bold
-        ]{Crimson}
+      Ligatures = TeX,
+      UprightFont = *-Roman,
+      BoldFont = *-Bold,
+      ItalicFont = *-Italic,
+      BoldItalicFont = *-BoldItalic,
+      Extension = .otf,
+      Scale = 1.0
+    ]{Crimson}
   \fi
   %\setmonofont{CMU Typewriter Text}
   \ifxetex
