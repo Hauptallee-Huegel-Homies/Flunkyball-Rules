@@ -176,7 +176,7 @@ jobs:
           path: build/latex/
       - name: Install pdfinfo
         shell: bash
-        run: apt-get install -y poppler-utils
+        run: sudo apt-get install -y poppler-utils
       - name: "Check Page lengths"
         shell: bash
         run: |
