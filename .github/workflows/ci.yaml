@@ -5,10 +5,12 @@ on:
     paths:
       - "**.md"
       - "**.tex"
+      - ".github/workflows/*.yaml"
   pull_request:
     paths:
       - "**.md"
       - "**.tex"
+      - ".github/workflows/*.yaml"
 
 jobs:
   check_markdown:
@@ -51,10 +53,22 @@ jobs:
             --to latex
             --output build/latex/en.tex
             rules/en.md
+      - name: Build Markdown (rules/de.md) to Latex (build/latex/de.tex)
+        uses: docker://pandoc/latex:2.14.0.1
+        with:
+          args: >-
+            --from markdown
+            --to latex
+            --output build/latex/de.tex
+            rules/de.md
       - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
         run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex
+      - name: "Adapt Latex (build/latex/de.tex): Remove ad-hoc label enumeration"
+        run: sed -i '/\\def\\labelenumi/d' build/latex/de.tex
       - name: "Adapt Latex (build/latex/en.tex): Add {} to terminate \\tightlist"
         run: sed -i 's/\\tightlist/\\tightlist{}/' build/latex/en.tex
+      - name: "Adapt Latex (build/latex/de.tex): Add {} to terminate \\tightlist"
+        run: sed -i 's/\\tightlist/\\tightlist{}/' build/latex/de.tex
       - name: "Upload TeX files"
         uses: actions/upload-artifact@v2
         with:
@@ -103,6 +117,17 @@ jobs:
             -halt-on-error
             -interaction=nonstopmode
             -output-directory=build/latex/
+      - name: "Compile Latex (latex/de.tex --> build/latex/de.pdf)"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: latex/de.tex
+          latexmk_use_lualatex: true
+          args: >-
+            -cd-
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+            -output-directory=build/latex/
       - name: "Upload PDFs"
         uses: actions/upload-artifact@v2
         with:
@@ -134,6 +159,17 @@ jobs:
             -halt-on-error
             -interaction=nonstopmode
             -output-directory=build/latex/
+      - name: "Compile Latex (latex/de.tex --> build/latex/de.pdf)"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: latex/de.tex
+          args: >-
+            -cd-
+            -pdf
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+            -output-directory=build/latex/
   xelatex:
     name: "📄 PDF XeLaTeX"
     runs-on: ubuntu-20.04
@@ -153,6 +189,18 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: latex/en.tex
+          pre_compile: tlmgr install tex-gyre
+          latexmk_use_xelatex: true
+          args: >-
+            -cd-
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+            -output-directory=build/latex/
+      - name: "Compile Latex (latex/de.tex --> build/latex/de.pdf)"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: latex/de.tex
           pre_compile: tlmgr install tex-gyre
           latexmk_use_xelatex: true
           args: >-
