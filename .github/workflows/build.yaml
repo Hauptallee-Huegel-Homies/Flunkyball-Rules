@@ -15,8 +15,8 @@ on:
       - "**.tex"
 
 jobs:
-  linux_standard:
-    name: "🐧 Linux Standard 🛠️"
+  linux_lualatex:
+    name: "🐧 Linux LuaLaTeX 🛠️"
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout project
@@ -29,7 +29,7 @@ jobs:
           args: >-
             --from markdown
             --to latex
-            --output build/latex/en.tex 
+            --output build/latex/en.tex
             rules/en.md
       - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
         run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex
@@ -68,7 +68,7 @@ jobs:
           args: >-
             --from markdown
             --to latex
-            --output build/latex/en.tex 
+            --output build/latex/en.tex
             rules/en.md
       - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
         run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex
@@ -99,7 +99,7 @@ jobs:
           args: >-
             --from markdown
             --to latex
-            --output build/latex/en.tex 
+            --output build/latex/en.tex
             rules/en.md
       - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
         run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex

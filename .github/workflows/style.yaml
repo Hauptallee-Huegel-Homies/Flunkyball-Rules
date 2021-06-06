@@ -49,7 +49,7 @@ jobs:
           args: >-
             --from markdown
             --to latex
-            --output build/latex/en.tex 
+            --output build/latex/en.tex
             rules/en.md
       - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
         run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex
@@ -57,5 +57,37 @@ jobs:
         run: sed -i 's/\\tightlist/\\tightlist{}/' build/latex/en.tex
       - name: Check Latex files
         uses: j2kun/chktex-action@1.0.3
-  
+  pdf:
+    name: "️📄 PDF Style Check"
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Create build/latex/
+        run: mkdir -p build/latex/
+      - name: Build Markdown (rules/en.md) to Latex (build/latex/en.tex)
+        uses: docker://pandoc/latex:2.14.0.1
+        with:
+          args: >-
+            --from markdown
+            --to latex
+            --output build/latex/en.tex
+            rules/en.md
+      - name: "Adapt Latex (build/latex/en.tex): Remove ad-hoc label enumeration"
+        run: sed -i '/\\def\\labelenumi/d' build/latex/en.tex
+      - name: "Adapt Latex (build/latex/en.tex): Add {} to terminate \\tightlist"
+        run: sed -i 's/\\tightlist/\\tightlist{}/' build/latex/en.tex
+      - name: "Compile Latex (latex/en.tex --> build/latex/en.pdf)"
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: latex/en.tex
+          latexmk_use_lualatex: true
+          args: >-
+            -cd-
+            -file-line-error
+            -halt-on-error
+            -interaction=nonstopmode
+            -output-directory=build/latex/
+      - name: "Check Page lengths"
+        run: "noerror=0; for pdf in build/latex/*.pdf; do (pdfinfo \"$pdf\" | grep -E \"^Pages:[ \t]*1$\") || noerror=1 ; done; test \"$noerror\" -eq 0"
 
