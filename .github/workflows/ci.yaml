@@ -114,7 +114,7 @@ jobs:
         run: printf "\\providecommand*{\\\ruleversion}{" > latex/version.tex
       - name: Extract info from version.txt to latex/version.tex
         shell: bash
-        run: grep -E "^([0-9]+)\.([0-9]+)-(Draft|Final)\+[0-9]+(-[a-z0-9]+)?$" version.txt | sed -E 's#^([0-9]+)\.([0-9]+)-(Draft|Final)\+([a-z0-9]+)(-?[a-z0-9]*)$#\1.\2\5\\version\3}#' >> version.tex
+        run: grep -E "^([0-9]+)\.([0-9]+)-(Draft|Final)\+[0-9]+(-[a-z0-9]+)?$" version.txt | sed -E 's#^([0-9]+)\.([0-9]+)-(Draft|Final)\+([a-z0-9]+)(-?[a-z0-9]*)$#\1.\2\5\\version\3}#' >> latex/version.tex
       - name: Download TeX files
         uses: actions/download-artifact@v2
         with:
