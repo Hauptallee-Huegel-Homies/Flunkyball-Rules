@@ -26,7 +26,7 @@ endif
 
 latex/version.tex: version.txt
 	@printf "\\providecommand*{\\\ruleversion}{" > $@
-	grep -E "^([0-9]+)\.([0-9]+)-(Draft|Final)\+[0-9]+-[a-z0-9]+$$" $< | sed -E 's#^([0-9]+)\.([0-9]+)-(Draft|Final)\+([a-z0-9]+)(-?[a-z0-9]*)$$#\1.\2\5\\version\3}#' >> $@
+	grep -E "^([0-9]+)\.([0-9]+)-(Draft|Final)\+[0-9]+(-[a-z0-9]+)?$$" $< | sed -E 's#^([0-9]+)\.([0-9]+)-(Draft|Final)\+([a-z0-9]+)(-?[a-z0-9]*)$$#\1.\2\5\\version\3}#' >> $@
 
 build/latex/%.tex: rules/%.md | build/latex/
 	pandoc --from markdown --to latex --output $@ -- $<
