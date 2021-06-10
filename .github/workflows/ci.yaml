@@ -109,11 +109,12 @@ jobs:
       - name: Generate Version Info
         shell: bash
         run: "echo ${{ steps.previoustag.outputs.tag }} > version.txt"
-      - name: Extract Version Info into version.tex
+      - name: Prepare latex/version.tex
         shell: bash
-        run: |-
-          printf "\\providecommand*{\\\ruleversion}{" > latex/version.tex
-          grep -E "^([0-9]+)\.([0-9]+)-(Draft|Final)\+[0-9]+-[a-z0-9]+$" version.txt | sed -E 's#^([0-9]+)\.([0-9]+)-(Draft|Final)\+([a-z0-9]+)(-?[a-z0-9]*)$#\1.\2\5\\version\3}#' >> version.tex
+        run: printf "\\providecommand*{\\\ruleversion}{" > latex/version.tex
+      - name: Extract info from version.txt to latex/version.tex
+        shell: bash
+        run: grep -E "^([0-9]+)\.([0-9]+)-(Draft|Final)\+[0-9]+(-[a-z0-9]+)?$" version.txt | sed -E 's#^([0-9]+)\.([0-9]+)-(Draft|Final)\+([a-z0-9]+)(-?[a-z0-9]*)$#\1.\2\5\\version\3}#' >> version.tex
       - name: Download TeX files
         uses: actions/download-artifact@v2
         with:
