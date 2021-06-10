@@ -5,7 +5,7 @@
 ---
 
 This is the central repository managing the standard Flunkyball Ruleset and its
-translations of [Hauptallee Hügel Homies](http://hauptalleehuegelhomies.com).
+translations of [Hauptallee Hügel Homies](http://hauptalleehügelhomies.com).
 
 ## Contributing
 
