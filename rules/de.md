@@ -10,14 +10,14 @@
 # Team
 
 1. Die Partie wird von zwei Teams ausgetragen.
-2. Ein Team besteht aus mindestens einem Spielenden.
+2. Ein Team besteht aus mindestens einem Mitglied.
 3. Die Teams dürfen sich in der Anzahl der Spielenden nur um eins unterscheiden.
 
 # Spielgegenstände
 
 ## Getränke
 
-1. Alle Spielende benötigen jeweils zumindest einen Behälter mit einem Getränk
+1. Alle Spielenden benötigen jeweils zumindest einen Behälter mit einem Getränk
    darin.
 2. Beide Teams müssen sich auf die Inhalte der Behälter einigen.
 3. Keine Einigung, führt zu einem _Entscheidungsspiel_. Die Gewinnenden wählen
@@ -28,7 +28,7 @@
 
 ## Zielgegenstand
 
-1. Jedes Objekt, das umfallen kann jedoch nicht von selbst umfällt, eignet sich
+1. Jedes Objekt, das umfallen kann, jedoch nicht von selbst umfällt, eignet sich
    als _Zielgegenstand_, sofern sich beide Teams darauf einigen.
 2. Keine Einigung, führt zu einem _Entscheidungsspiel_. Die Gewinnenden wählen
    den _Zielgegenstand_.
@@ -145,7 +145,9 @@ schweren Strafe:
 2. Trinken aus dem Behälter, obwohl das Team nicht im _Angriff_ ist oder
    außerhalb der _Reaktionsphase_.
 3. Trinken aus dem Behälter, obwohl in der _Reaktionsphase_ der _Zielgegenstand_
-   noch steht oder aufgrund eines regelverletzenden Wurfes umgefallen ist.
+   noch steht, oder während das andere Team bereits regelkonform Stopp
+   signalisiert hat oder wenn der _Zielgegenstand_ aufgrund eines
+   regelverletzenden Wurfes umgefallen ist.
 4. Ausspucken von Getränken.
 5. Erbrechen.
 

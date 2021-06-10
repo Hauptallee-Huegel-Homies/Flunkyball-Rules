@@ -131,8 +131,9 @@ actions result in a major penalty:
 1. The container empties for any other reason than being drunk by the player.
 2. The container is drank from, while the own team is not the _Offence_ or it is
    not the _Reaction Phase_.
-3. The container is drank from, while the _target_ is still standing or if it
-   was not tipped over with a legal throw.
+3. The container is drank from, while the _target_ is still standing, or after
+   the other team legally signaled to stop, or if the _target_ was not tipped
+   over with a legal throw.
 4. Spitting out drinks.
 5. Puking.
 
