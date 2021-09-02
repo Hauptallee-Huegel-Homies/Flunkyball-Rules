@@ -40,8 +40,8 @@
 2. Sollte es nicht mehr möglich sein mit dem _Wurfgegenstand_ den
    _Zielgegenstand_ umzuwerfen und irreperabel beschädigt sein, so kann es mit
    einem von beiden Teams vorgeschlagenen Objekt ausgetauscht werden.
-3. Keine Einigung, führt zu einem _Entscheidungsspiel_. Die Gewinnenden wählen den
-   _Wurfgegenstand_.
+3. Keine Einigung, führt zu einem _Entscheidungsspiel_. Die Gewinnenden wählen
+   den _Wurfgegenstand_.
 
 # Spielfeld
 
@@ -110,18 +110,19 @@ Es wird reihum gespielt --- bestehend aus zwei Phasen --- bis das _Spiel_ endet.
 
 # Strafen
 
-1. Es liegt in der Verantwortung der Teams bei Regelverstößen Strafen innerhalb
-   eines Wurfes einzufordern.
-2. Strafen können nur durch Eigenverschulden oder durch eine regelkonforme
-   Aktion des anderen Teams erfolgen.
-3. Die Zuwiderhandelnden, dürfen sich immer für eine höhere Strafe entscheiden.
-4. Sollte es nicht möglich sein eine Strafe zu erteilen, so wird die nächst
+1. Strafen müssen selbsttätig eingefordert werden.
+2. Strafen müssen spätestens bis zu Beginn des nächsten Wurfes des eigenen Teams
+   eingefordert werden.
+3. Strafen können nur durch Eigenverschulden oder durch eine regelkonforme
+   Aktion des anderen Teams erfolgen
+4. Die Zuwiderhandelnden, dürfen sich immer für eine höhere Strafe entscheiden.
+5. Sollte es nicht möglich sein eine Strafe zu erteilen, so wird die nächst
    höhere Strafe vergeben.
 
 ## Minder
 
-Bei dem nächsten _Angriff_ des Teams der Zuwiderhandelnden, tauschen die Teams
-ohne Wurfversuch die Rollen. Folgende Aktionen führen zu einem minderen Strafe:
+Die Zuwiderhandelnden überspringen ihre nächsten _Angriff_. Folgendes führt
+zu einem minderen Strafe:
 
 1. Verlassen des _Spielfeldes_, ohne einstimmigen Beschlusses aller
    verbleibenden Personen.
@@ -131,25 +132,21 @@ ohne Wurfversuch die Rollen. Folgende Aktionen führen zu einem minderen Strafe:
 4. Berühren des Behälters während der _Reaktionsphase_ in der _Verteidigung_.
 5. Berühren des Behälters Anderer.
 6. Umfallen des Behälters, ohne das Getränk verschüttet wurde. Der Behälter
-   muss, nicht mit anderen Strafen sanktionierbar, sofort wieder aufgestellt
-   werden.
+   muss, sofort wieder aufgestellt werden.
 
 ## Schwer
 
 Die Zuwiderhandelnden müssen jeweils ein zusätzliches Getränk nehmen. Das
 Getränk muss von genau einem Teammitglied --- ob bereits beendet oder nicht ---
-im _Spiel_ als Getränk geleert werden. Folgende Aktionen führen zu einer
-schweren Strafe:
+im _Spiel_ als Getränk geleert werden. Folgendes führt zu einer schweren Strafe:
 
 1. Leeren von Behältern, ohne das die jeweiligen Spielenden davon trinken.
-2. Trinken aus dem Behälter, obwohl das Team nicht im _Angriff_ ist oder
-   außerhalb der _Reaktionsphase_.
-3. Trinken aus dem Behälter, obwohl in der _Reaktionsphase_ der _Zielgegenstand_
+2. Trinken aus dem Behälter, obwohl in der _Reaktionsphase_ der _Zielgegenstand_
    noch steht, oder während das andere Team bereits regelkonform Stopp
    signalisiert hat oder wenn der _Zielgegenstand_ aufgrund eines
    regelverletzenden Wurfes umgefallen ist.
-4. Ausspucken von Getränken.
-5. Erbrechen.
+3. Ausspucken von Getränken.
+4. Erbrechen.
 
 ## Heftig
 
@@ -157,3 +154,5 @@ Das Team des Zuwiderhandelnden darf in diesem _Spiel_ nicht mehr über die
 _Bierlinie_ treten. Die folgende Aktion führt zu einer schweren Strafe:
 
 1. Absichtliches Verschütten von Getränken.
+2. Trinken aus dem Behälter, obwohl das Team nicht im _Angriff_ ist oder
+   außerhalb der _Reaktionsphase_.
