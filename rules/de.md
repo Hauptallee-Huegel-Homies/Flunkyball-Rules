@@ -133,7 +133,7 @@ zu einem minderen Strafe:
 4. Berühren des Behälters während der _Reaktionsphase_ in der _Verteidigung_.
 5. Berühren des Behälters Anderer.
 6. Umfallen des Behälters, ohne das Getränk verschüttet wurde. Der Behälter
-   muss, sofort wieder aufgestellt werden.
+   muss, sofort ohne weitere Folgen wieder aufgestellt werden.
 
 ## Schwer
 

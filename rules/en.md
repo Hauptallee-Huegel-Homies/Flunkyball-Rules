@@ -102,13 +102,13 @@ ends.
 
 # Penalties
 
-1. It is the obligation of the other team to demand penalties on rule violations
-   within one throw.
-2. Penalties can only occur self-inflicted or due to legal actions of the other
+1. It is the obligation of the other team to demand penalties themselves.
+2. Teams may demand penalties until the start of their next throw.
+3. Penalties can only occur self-inflicted or due to legal actions of the other
    team.
-3. At the offending player's discretion they are allowed to choose a higher
+4. At the offending player's discretion they are allowed to choose a higher
    penalty.
-4. Should a penalty no longer be possible, the next higher penalty is given.
+5. Should a penalty no longer be possible, the next higher penalty is given.
 
 ## Minor
 
@@ -146,3 +146,5 @@ The offending party's team may no longer step over their _beerline_ in this
 _match_. The following action results in a severe penalty:
 
 1. Deliberately spilling drinks.
+2. The container is drank from, despite not being in _Offence_ or outside of the
+   _Reaction Phase_.
