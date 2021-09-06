@@ -35,7 +35,8 @@
 2. Should it no longer be possible to reliably tip over the _target_ with the
    _throwing object_, and it is beyond repair, it can be exchanged for a newly
    agreed upon object.
-3. No agreement results in a _decider_, the winner choosing the _throwing object_.
+3. No agreement results in a _decider_, the winner choosing the _throwing
+   object_.
 
 # Pitch
 
@@ -67,7 +68,8 @@
 
 # Phases
 
-The game is played in turns --- consisting of two phases --- until the _match_ ends.
+The game is played in turns --- consisting of two phases --- until the _match_
+ends.
 
 ## Action Phase
 
@@ -83,7 +85,8 @@ The game is played in turns --- consisting of two phases --- until the _match_ e
 
 1. The _Defence_ may step over their _beerline_.
 2. The _Offence_ may start to drink if they successfully and legally used the
-   _throwing object_ to tip over the _target_.
+   _throwing object_ to tip over the _target_ or it was tipped over because of
+   the _defence_.
 3. Once the _target_ is repositioned within the _circle_, and all players of the
    _Defence_ return behind their _beerline_ they may signal the _Offence_ to
    stop. The _Offence_ must stop no later than then.

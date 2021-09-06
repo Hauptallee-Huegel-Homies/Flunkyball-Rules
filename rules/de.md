@@ -92,8 +92,9 @@ Es wird reihum gespielt --- bestehend aus zwei Phasen --- bis das _Spiel_ endet.
 ## Reaktionsphase
 
 1. Das Team in der _Verteidigung_ darf über ihre _Bierlinie_ treten.
-2. Das Team im _Angriff_ darf anfangen zu trinken, sofern sie den
-   _Zielgegenstand_ regelkonform mit dem _Wurfgegenstand_ umgeworfen haben.
+2. Das Team im _Angriff_ darf anfangen zu trinken, sofern der _Zielgegenstand_
+   regelkonform mit dem _Wurfgegenstand_ umgeworfen wurde oder die
+   _Verteidigung_ das Umfallen des _Zielgegenstandes_ verschuldet.
 3. Sobald der _Zielgegenstand_ innerhalb des _Kreises_ steht und alle des Teams
    in der _Verteidigung_ hinter ihrer _Bierlinie_ stehen, dürfen sie dem anderen
    Team signalisieren zu stoppen. Das andere Team muss spätestens dann aufhören
@@ -114,7 +115,7 @@ Es wird reihum gespielt --- bestehend aus zwei Phasen --- bis das _Spiel_ endet.
 2. Strafen müssen spätestens bis zu Beginn des nächsten Wurfes des eigenen Teams
    eingefordert werden.
 3. Strafen können nur durch Eigenverschulden oder durch eine regelkonforme
-   Aktion des anderen Teams erfolgen
+   Aktion des anderen Teams erfolgen.
 4. Die Zuwiderhandelnden, dürfen sich immer für eine höhere Strafe entscheiden.
 5. Sollte es nicht möglich sein eine Strafe zu erteilen, so wird die nächst
    höhere Strafe vergeben.
