@@ -152,7 +152,7 @@ im _Spiel_ als Getränk geleert werden. Folgendes führt zu einer schweren Straf
 ## Heftig
 
 Das Team des Zuwiderhandelnden darf in diesem _Spiel_ nicht mehr über die
-_Bierlinie_ treten. Die folgende Aktion führt zu einer schweren Strafe:
+_Bierlinie_ treten. Die folgende Aktion führt zu einer heftigen Strafe:
 
 1. Absichtliches Verschütten von Getränken.
 2. Trinken aus dem Behälter, obwohl das Team nicht im _Angriff_ ist oder
